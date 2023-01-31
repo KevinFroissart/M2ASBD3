@@ -1,4 +1,3 @@
-# Play 1
 - name: Play Front
   hosts: lyon
   become: yes
@@ -20,6 +19,3 @@
         src: files/nginx.conf
         dest: /etc/nginx/nginx.conf
 
-# Play 2
-
-# Play 3
