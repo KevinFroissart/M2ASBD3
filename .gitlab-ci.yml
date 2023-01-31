@@ -8,7 +8,7 @@ variables:
   OS_APPLICATION_CREDENTIAL_ID: 014b6ec3c50948e39e6284a6d8c4852e
   ASBD_GROUP: asbd-kevily
   SECRET_FIELD: secret
-  VAULT_PROJECT_NAME: tp2
+  VAULT_PROJECT_NAME: tp1
 
 syntax:
   stage: test
