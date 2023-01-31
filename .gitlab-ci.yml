@@ -26,7 +26,7 @@ deploy:
     - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
 
     - PRIVATE_KEY=$(vault kv get -field=key kv/$ASBD_GROUP/$CI_PROJECT_NAME)
-    - export OS_APPLICATION_CREDENTIAL_SECRET=$(vault kv get -field=$SECRET_FIELD kv/$ASBD_GROUP/$CI_PROJECT_NAME)
+    - export OS_APPLICATION_CREDENTIAL_SECRET=$(vault kv get -field=$SECRET_FIELD kv/$ASBD_GROUP/tp2)
     - echo "$PRIVATE_KEY"| ssh-add -
     - ansible-galaxy install -r requirements.yaml
     - ansible-playbook -i openstack.yaml $CI_COMMIT_REF_NAME.yaml
