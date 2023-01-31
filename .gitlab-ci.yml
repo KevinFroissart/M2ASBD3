@@ -5,9 +5,10 @@ variables:
   VAULT_ADDR: https://vault-dc.info.univ-lyon1.fr
   OS_AUTH_URL: https://cloud-info.univ-lyon1.fr:5000/v3
   OS_AUTH_TYPE: v3applicationcredential
-  OS_APPLICATION_CREDENTIAL_ID: c4bdb8446adc4ab69cc3fd24612715e3
+  OS_APPLICATION_CREDENTIAL_ID: 29967559a1d14ebe973d6e06edb51102
   ASBD_GROUP: asbd-kevily
-  SECRET_FIELD: unsecrectbienbidon
+  SECRET_FIELD: secret
+  VAULT_PROJECT_NAME: tp2
 
 syntax:
   stage: test
@@ -24,9 +25,9 @@ deploy:
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
     - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-
-    - PRIVATE_KEY=$(vault kv get -field=key kv/$ASBD_GROUP/tp2)
-    - export OS_APPLICATION_CREDENTIAL_SECRET=$(vault kv get -field=$SECRET_FIELD kv/$ASBD_GROUP/tp2)
+ 
+    - PRIVATE_KEY=$(vault kv get -field=key kv/$ASBD_GROUP/$VAULT_PROJECT_NAME)
+    - export OS_APPLICATION_CREDENTIAL_SECRET=$(vault kv get -field=$SECRET_FIELD kv/$ASBD_GROUP/$VAULT_PROJECT_NAME)
     - echo "$PRIVATE_KEY"| ssh-add -
     - ansible-galaxy install -r requirements.yaml
     - ansible-playbook -i openstack.yaml $CI_COMMIT_REF_NAME.yaml
