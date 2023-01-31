@@ -16,9 +16,9 @@
         name: nginx
         state: started
     - name: copy nginx conf
-      ansible.builtin.copy
-      src: files/nginx.conf
-      dest: /etc/nginx/nginx.conf
+      ansible.builtin.copy:
+        src: files/nginx.conf
+        dest: /etc/nginx/nginx.conf
 
 # Play 2
 
