@@ -1,0 +1,6 @@
+- name: Play Front
+  hosts: front
+  become: yes
+  remote_user: ubuntu
+  roles:
+    - nginx
