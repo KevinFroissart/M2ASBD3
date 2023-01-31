@@ -7,7 +7,7 @@ variables:
   OS_AUTH_TYPE: v3applicationcredential
   OS_APPLICATION_CREDENTIAL_ID: c4bdb8446adc4ab69cc3fd24612715e3
   ASBD_GROUP: asbd-kevily
-  SECRET_FIELD: secret
+  SECRET_FIELD: unsecrectbienbidon
 
 syntax:
   stage: test
