@@ -5,7 +5,7 @@ variables:
   VAULT_ADDR: https://vault-dc.info.univ-lyon1.fr
   OS_AUTH_URL: https://cloud-info.univ-lyon1.fr:5000/v3
   OS_AUTH_TYPE: v3applicationcredential
-  OS_APPLICATION_CREDENTIAL_ID: 29967559a1d14ebe973d6e06edb51102
+  OS_APPLICATION_CREDENTIAL_ID: 014b6ec3c50948e39e6284a6d8c4852e
   ASBD_GROUP: asbd-kevily
   SECRET_FIELD: secret
   VAULT_PROJECT_NAME: tp2
