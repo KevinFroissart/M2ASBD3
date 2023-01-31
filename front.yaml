@@ -1,0 +1,11 @@
+# Play 1
+- name: Play Front
+  hosts: lyon
+  become: yes
+  remote_user: ubuntu
+  roles:
+    - nginx
+
+# Play 2
+
+# Play 3
